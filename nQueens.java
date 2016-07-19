@@ -3,6 +3,10 @@ package Nqueen;
 //import pf4Assignment3.nQueens.position;
 
 public class nQueens {
+	
+//n Queens problem
+// placing n queens on a nxn chessboard so that no two queens can capture each other
+//method returns array containing positions of queens in solution 
 	public int[][] solutionNqueens(int n)
 	{
 		int[][] output =new int[n][2];
@@ -18,6 +22,8 @@ public class nQueens {
 		
 		
 	}
+	
+	//method to display solution
 	 public void display(int[][] arr,int n)
 	 {
 		 System.out.println("queens' positions on "+n+"x"+n+" board are :");
@@ -34,16 +40,7 @@ public class nQueens {
 			
 		 }
 	 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	private boolean ifpossible(int n,int row,int[][] arr)
 	{
 		if(n==row)
@@ -54,6 +51,8 @@ public class nQueens {
 		for(col=0;col<n;col++)
 		{
 			boolean safe = true;
+			//check for given row and column are under attack by previous queens or not
+			//if is under attack returns false as safe
 			for(int queen=0;queen<row;queen++)
 			{
 				if(arr[queen][0]==row||arr[queen][1]==col||arr[queen][0]-arr[queen][1]==row-col||arr[queen][0]+arr[queen][1]==row+col)
@@ -63,9 +62,10 @@ public class nQueens {
 				}
 				
 			}
+		
 			if(safe)
 			{
-				//arr[row]=new position(row,col);
+				//store row nd col value in output array
 				arr[row][0]=row;
 				arr[row][1]=col;
 			if(ifpossible(n,row+1,arr))
