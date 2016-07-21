@@ -1,0 +1,5 @@
+Q1. Overall Rating, Single Select, (1/2/3/4/5)
+Q2. Area of improvement, Multi Select, (Service Quality/ Communication/ Delivery Process)
+Q3. Feedback, Text
+Q4. Expected warranty period in months, numeric,(1to12)
+Q.5 Best Performance Area ,Text,(Service Quality/ Communication/ Delivery Process)
