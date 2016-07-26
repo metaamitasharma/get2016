@@ -71,8 +71,5 @@ private static boolean rowcheck(int row,int column,char symbol){
 		public static boolean getwin(){
 			return win;
 		}
-public static void main(String args[])
-{
-	RuleCheck r=new RuleCheck();
-}
+
 }
