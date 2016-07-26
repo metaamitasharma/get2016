@@ -5,7 +5,7 @@ public class NumberQuestion extends Question {
 	
 	public NumberQuestion(String index,String questionLine) {
 		this.questionLine=questionLine;
-		setQtype(TEXT_STRING);
+		setQtype(TEXT_INTEGER);
 		setQuesIndex(index);
 	}
 	
