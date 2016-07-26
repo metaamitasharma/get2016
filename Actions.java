@@ -4,6 +4,29 @@ package MENU;
 
 public class Actions extends EditMenu{
 	
+	public void  goToMenuBar()
+	{
+		System.out.println("Menu Bar Contains");
+		System.out.println("1)File       2)Edit");
+	}
+	 public String getMenuChoice()
+	 {
+		 Scanner input = new Scanner(System.in);
+		 String userInput = input.next();
+		 if(userInput.equalsIgnoreCase("File")||userInput.equalsIgnoreCase("Edit"))
+		 {
+			String  menuChoice = userInput;
+			return menuChoice;
+		 }
+		 else
+		 {
+			 System.out.println("invalid choice");
+			return  getMenuChoice();
+		 }
+	 }
+	
+	
+	
 	public void ActionPerform(EditMenu edit)
 	{
 		if(edit.Choice.equalsIgnoreCase("FontSize"))
