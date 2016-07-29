@@ -1,10 +1,14 @@
 package ds1;
 
+
+//implementation of arraylist using array
 public class ArrayList<E> {
-	int maxSize = 5;
+	int maxSize = 5;   
 	Object dataArray[] = new Object[maxSize];
 	int count = 0;
-
+	
+	
+        //adding an element to arraylist
 	public void add(Object data) {
 
 		if (count < maxSize) {
@@ -14,7 +18,7 @@ public class ArrayList<E> {
 
 		else {
 			int i;
-			maxSize = (maxSize * 3) / 2 + 1;
+			maxSize = (maxSize * 3) / 2 + 1;             //redefines new arraysize
 			Object dataArray1[] = new Object[maxSize];
 			for (i = 0; i < count; i++) {
 				dataArray1[i] = dataArray[i];
@@ -28,7 +32,8 @@ public class ArrayList<E> {
 		}
 
 	}
-
+        
+        //adds new element at given location
 	public boolean addAtLocation(int position, E data) {
 		System.out.println(" count is" + count + "max_size" + maxSize);
 		int j;
@@ -57,13 +62,16 @@ public class ArrayList<E> {
 
 	}
 
+         //displays elements of arraylist
 	void display() {
 
 		for (int i = 0; i < count; i++) {
 			System.out.println("Data is" + dataArray[i]);
 		}
 	}
-
+        
+        
+        //returns index of given data in arraylist otherwise -1
 	public int retrieveIndex(Object data) {
 
 		for (int i = 0; i < count; i++) {
@@ -74,6 +82,7 @@ public class ArrayList<E> {
 		return -1;
 	}
 
+        
 	int retrieve(Object data, int location) {
 		for (int i = location; i < count; i++) {
 			if (dataArray[i] == data) {
@@ -83,13 +92,14 @@ public class ArrayList<E> {
 		return -1;
 
 	}
-
+        
+        //removes data at given location
 	boolean removeDataOfLocation(int location) {
 
 		if (location < count) {
 			System.out.println("Deleted data is" + dataArray[location]);
 			for (int i = location; i < count - 1; i++) {
-				dataArray[i] = dataArray[i + 1];
+				dataArray[i] = dataArray[i + 1];   //shifting elements forward
 			}
 			count--;
 			return true;
@@ -100,7 +110,9 @@ public class ArrayList<E> {
 		}
 
 	}
-
+        
+        
+        //removes given data from arraylist 
 	boolean removeData(Object data) {
 		for (int i = 0; i < count; i++) {
 			if (dataArray[i] == data) {
@@ -115,11 +127,13 @@ public class ArrayList<E> {
 
 	}
 
+        //clears the arraylist
 	void clearList() {
 		count = 0;
 
 	}
 
+        //reversing the aaraylist
 	void reverseList() {
 		int i = 0, j = count - 1;
 		Object temp = new Object();
@@ -132,15 +146,13 @@ public class ArrayList<E> {
 
 	}
 
+        //get element at given location
 	Object get(int loc) {
 
 		return dataArray[loc];
 	}
 
-	void sort() {
-
-	}
-
+        
 	public static void main(String ar[]) {
 
 		ArrayList<Integer> ob = new ArrayList<Integer>();
