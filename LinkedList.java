@@ -1,15 +1,18 @@
 package DSsession1;
 
+//LinkedList is generic class defines methods for singly liked list implementation
+
 public class LinkedList<T> {
 	
 	public Node start;
-	//public Node current;
-	
+
+	//default constructor
 	public LinkedList()
 	{
 		start=null;
 	}
-
+         
+         //adds a new node containing item in its value section at the front of linked list
 	public void addAtFront(T item)
 	{
 		
@@ -18,11 +21,13 @@ public class LinkedList<T> {
 		temp.next=null;
 		start=temp;
 	}
+	
+	//adds a new node in list with item in its value section at given location
 	public void additemAtLocation(int loc,T item)
 	{
 		
-		Node< T> current = start;
-		Node<T> temp = new Node();
+		Node< T> current = start;   //to travrse the list
+		Node<T> temp = new Node();  //new node that is going to be added at loc
 		temp.value = item;
 		for(int i=1;i<loc-1;i++)
 		{
@@ -37,10 +42,12 @@ public class LinkedList<T> {
 		current.next=temp;
 	}
 	
+	
+	//removes a node having value = itemvalue from the list 
 	public void RemoveByValue(T ItemValue)
 	{
-		Node< T> prev = start;
-		Node<T> current = prev.next;
+		Node< T> prev = start;     //stores previous node position 
+		Node<T> current = prev.next;   //traverses list
 		while(current.next!=null)
 		{
 			if(current.value==ItemValue)
@@ -57,6 +64,7 @@ public class LinkedList<T> {
 		System.out.println("item not found in the list");
 	}
 	
+	//a node at from given index is removed
 	public void removeByIndex(int index)
 	{
 		Node< T> current = start;
@@ -67,6 +75,7 @@ public class LinkedList<T> {
 		current.next=current.next.next;
 	}
 	
+	//returns value of node at given index
 	public void RetriveByIndex(int index)
 	{
 		Node< T> current = start;
@@ -78,6 +87,8 @@ public class LinkedList<T> {
 		
 	}
 	
+	//to add a new node with value=item 
+	//node is being added at the end of list 
 	public void add(T item)
 	{
 		Node< T> current = start;
@@ -90,7 +101,8 @@ public class LinkedList<T> {
 		temp.next=null;
 		current.next=temp;
 	}
-	
+	 
+	 //to display node elements in the list
 	public  void display()
 	{
 		Node< T> current = start;
@@ -101,13 +113,14 @@ public class LinkedList<T> {
 			System.out.println(current.value);	
 			current = current.next;
 		}
-		System.out.println(current.value);	
+		System.out.println(current.value);
+			System.out.println();
 	}
 	
-	
+	//reversing the list
 	public void reverseList()
 	{
-		 Node<T> prev   = null;
+		    Node<T> prev   = null;
 		    Node<T> current = start;
 		    Node<T> Next;
 		    while (current != null)
@@ -121,10 +134,6 @@ public class LinkedList<T> {
 	}
 	
 	
-	public void sortList()
-	{
-		
-	}
 	
 	public static void main(String args[])
 	{
@@ -136,17 +145,12 @@ public class LinkedList<T> {
 		Llist.add("d");
 		Llist.add("e");
 		Llist.display();
-		System.out.println();
 		Llist.additemAtLocation(2, "amita");
 		Llist.display();
-		System.out.println();
 		Llist.removeByIndex(4);
-		
 		Llist.display();
-		System.out.println();
 		Llist.RemoveByValue("a");
 		Llist.display();
-		System.out.println();
 		Llist.reverseList();
 		Llist.display();
 		
