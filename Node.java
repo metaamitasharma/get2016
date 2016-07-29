@@ -1,10 +1,14 @@
 package DSsession1;
 
+//Node class defines a node in singly linked list 
+
 public class Node<T> {
 	public T value;
 	public Node next;
-	//Node start;
-	
+
+
+
+//default constructor	
 public  Node()
 {
 
@@ -12,7 +16,7 @@ public  Node()
 	next=null;
 }
 
-
+//constructor with 1 parameter val sets val as value
 public Node(T val)
 {
 	value = val;
