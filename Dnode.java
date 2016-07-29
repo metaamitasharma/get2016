@@ -1,11 +1,12 @@
 package DLinkedlist;
 
-
+//Dnode class defines node in Doubly linked list
 public class Dnode<T> {
 	public T value;
 	public Dnode<T> next;
 	public Dnode<T> prev;
-	
+
+//default constructor	
 public  Dnode()
 {
 
@@ -14,7 +15,7 @@ public  Dnode()
 	prev=null;
 }
 
-
+//constructor with one parameter val sets val as value 
 public Dnode(T val)
 {
 	value = val;
@@ -22,4 +23,4 @@ public Dnode(T val)
 	prev=null;
 }
 
-}
+}//end of class
