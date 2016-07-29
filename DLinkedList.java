@@ -1,17 +1,20 @@
 package DLinkedlist;
 
+//class DLinkedList defines operations to implement doubly lunked list
 public class DLinkedList<T> {
 	
-	public Dnode start;
-	public Dnode end;
-	//public Node current;
+	public Dnode start;   //first node pointer
+	public Dnode end;     //end node pointer
 	
+	
+	//default constructor
 	public DLinkedList()
 	{
 		start=null;
 		end = null;
 	}
 
+       //adds a node with item = value at front 
 	public void addAtFront(T item)
 	{
 		
@@ -22,6 +25,8 @@ public class DLinkedList<T> {
 		start=temp;
 		end=temp;
 	}
+	
+	//adds a new node at given location
 	public void additemAtLocation(int loc,T item)
 	{
 		
@@ -44,15 +49,17 @@ public class DLinkedList<T> {
 		
 	}
 	
+	//removes a node having value= itemvalue
 	public void RemoveByValue(T ItemValue)
 	{
-		Dnode< T> pre = start;
+		Dnode< T> pre = start;                //stores node previous to the current node 
+		                                      //to find node previous to the node that is being removed
 		Dnode<T> current = pre.next;
 		while(current.next!=null)
 		{
 			if(current.value==ItemValue)
 			{
-				pre.next=current.next;
+				pre.next=current.next;   
 				current.next.prev=current.prev;
 				return;
 			}
@@ -65,6 +72,8 @@ public class DLinkedList<T> {
 		System.out.println("item not found in the list");
 	}
 	
+	
+	 //removes a node from given index 
 	public void removeByIndex(int index)
 	{
 		Dnode< T> current = start;
@@ -76,6 +85,7 @@ public class DLinkedList<T> {
 		current.next.prev=current;
 	}
 	
+	//provides value at given index
 	public void RetriveByIndex(int index)
 	{
 		Dnode< T> current = start;
@@ -87,6 +97,8 @@ public class DLinkedList<T> {
 		
 	}
 	
+	//to add new node 
+	//new node is being added at end
 	public void add(T item)
 	{
 		Dnode< T> current = start;
@@ -102,6 +114,7 @@ public class DLinkedList<T> {
 		end=temp;
 	}
 	
+	//to display doubly linked list
 	public  void display()
 	{
 		Dnode< T> current = start;
@@ -115,7 +128,7 @@ public class DLinkedList<T> {
 		System.out.println(current.value);	
 	}
 	
-	
+	//reversing the list
 	public void reverseList()
 	{
 		Dnode<T> current = end;
@@ -124,18 +137,13 @@ public class DLinkedList<T> {
 		{
 			current=current.prev;
 			System.out.println(current.value);
-			//current=current.prev;
+		
 		}
+	     	System.out.println();	
 	  
 	}
 	
 	
-	
-	
-	public void sortList()
-	{
-		
-	}
 	
 	public static void main(String args[])
 	{
@@ -147,17 +155,12 @@ public class DLinkedList<T> {
 	Llist.add("d");
 	Llist.add("e");
 	Llist.display();
-	System.out.println();
 	Llist.additemAtLocation(2, "amita");
 	Llist.display();
-	System.out.println();
 	Llist.removeByIndex(4);
-	
-	Llist.display();
-	System.out.println();
+        Llist.display();
 	Llist.RemoveByValue("a");
 	Llist.display();
-	System.out.println();
 	Llist.reverseList();
 	
 	
