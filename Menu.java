@@ -1,31 +1,36 @@
-package MENU;
+package oopsAssignment4;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
-//class Menu contains main fuction
-
-public class Menu extends EditMenu {
-		   	
-	Actions obj = new Actions();
-		obj.goToMenuBar();
-		String menuChoice = obj.getMenuChoice();
-		if(menuChoice.equalsIgnoreCase("Edit"))
-		{
+public class Menu extends MenuBar{
+ 
+	public String MenuName;
+	MenuItem[] menuItems = new MenuItem[10];	
+	public Menu()
+	{
 		
-		EditMenu edit = new EditMenu();      //object to EditMenu Class
-		edit.goToEditMenu();		        //method shows edit menu and its submenues
-		edit.ShowMenuItems();              //method shows items in submenu
-		edit.getMenuItem();                //takes user choice among items
-		new Actions(). ActionPerform(edit);    //action corresponding to choice is performed
-		}
-		else
+	}
+	public Menu(String name)
+	{
+		MenuName=name;
+		
+	}
+	
+	public String getMenuName() {
+		return MenuName;
+	}
+	public void setMenuName(String menuName) {
+		MenuName = menuName;
+	}
+	public void printMenu(String name)
+	{
+		if(MenuName.equalsIgnoreCase(name))
 		{
-			
-			FileMenu filemenu = new FileMenu();
-			filemenu.ShowFileMenu();
-	         filemenu.getUserChoice();
+		for(int i=0;i<menuItems.length;i++)
+		{
+			System.out.print(menuItems[i].MenuName+"\t");
+		}
 		}
 	}
-
 
 }
