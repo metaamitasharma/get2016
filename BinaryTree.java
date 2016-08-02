@@ -79,14 +79,14 @@ public class BinaryTree {
   * this is method to traverse a tree in reverse in- order 
   * i.e right->root->left
   */
-	public ArrayList<Integer> InorderReverse(BTnode root) {
-		ArrayList<Integer> inorderReverseList = new ArrayList<Integer>();
+	public InorderReverse(BTnode root) {
+	
 		if (root != null) {
 			InorderReverse(root.Right);
-			inorderReverseList.add((Integer) root.value);   //adding traversed values to traverse list 
+			traverseList.add((Integer) root.value);   //adding traversed values to traverse list 
 			InorderReverse(root.Left);                      //to compare with in-order traversal
 		}
-		return inorderReverseList;
+	
 	}
 
 	/*
@@ -158,7 +158,7 @@ public class BinaryTree {
 			binaryTree1.createBT(binaryTree1.Root, array2[i]);
 		}
 
-		ArrayList<Integer> temp1 = binaryTree1.InorderReverse(binaryTree1.Root);
+	binaryTree1.InorderReverse(binaryTree1.Root);
 
 		if (binaryTree.checkMirrorTrees(binaryTree1)) {
 			System.out.println("trees are mirror similar");
