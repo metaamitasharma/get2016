@@ -42,6 +42,20 @@ public class BinaryTree {
 		return pivot;
 
 	}
+	/*
+	*      problem 1
+	*method to traverse Binary tree in preorder i.e root->left->right
+	*
+		public void preOrder(BTnode root) {
+
+		if (root != null) {
+			System.out.print(root.value + "\t");
+			preOrder(root.Left);
+			preOrder(root.Right);
+		
+			  	}
+
+	}
 
 	/*
 	 * method for inorder traversal
@@ -61,7 +75,8 @@ public class BinaryTree {
 		}
 
 	}
-
+	
+        //PROBLEM 3
 	//method for post order traverse
 	
 	public void postOrder(BTnode root) {
@@ -89,7 +104,7 @@ public class BinaryTree {
 	
 	}
 
-	/*
+	/* PROBLEM 2
 	 * method to check two trees are mirror-similar or not
 	 * I'm checking this by traversing one tree in INORDER and other one in REVERSE-INORDER
 	 * if the results of these two traversing is similar then these two are mirror similar
@@ -168,6 +183,8 @@ public class BinaryTree {
 		}
 		System.out.println("postorder traversal :");
 		binaryTree.postOrder(binaryTree.Root);
+		System.out.println("preorder traversal :");
+		binaryTree.preOrder(binaryTree.Root);
 	}
 
 
