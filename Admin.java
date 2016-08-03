@@ -24,8 +24,16 @@ public class Admin{
 		System.out.println("Enter job profile \n chair , professor , graduate student, under graduate student");
 		Scanner sc= new Scanner(System.in);
         String str=sc.nextLine();
-        Job newjob=new Job(str);           //constructor of Job class creates new job with profile str
-        Insert(newjob);                   //new job is being added to heap
+              if(str.equalsIgnoreCase("chair")||str.equalsIgnoreCase("professor")||str.equalsIgnoreCase("graduate student")||str.equalsIgnoreCase("under graduate student"))
+               {
+        	Job newjob=new Job(str);           //constructor of Job class creates new job with profile str
+                Insert(newjob);                     //new job is being added to heap
+               }
+             else
+              {
+              System.out.println("enter right profile");
+              insertnewJob();
+              }
 	}	
 		
 	
