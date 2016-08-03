@@ -45,7 +45,7 @@ public class BinaryTree {
 	/*
 	*      problem 1
 	*method to traverse Binary tree in preorder i.e root->left->right
-	*
+	*/
 		public void preOrder(BTnode root) {
 
 		if (root != null) {
@@ -138,6 +138,7 @@ public class BinaryTree {
 		Scanner input = new Scanner(System.in);
 		BinaryTree binaryTree = new BinaryTree();
 		BinaryTree binaryTree1 = new BinaryTree();
+		//taking first tree elements from user as array
 		System.out.println("how many elements in tree 1 ");
 		int size1 = input.nextInt();
 		int[] array1 = new int[size1];
@@ -145,18 +146,14 @@ public class BinaryTree {
 		for (int i = 0; i < size1; i++) {
 			array1[i] = input.nextInt();
 		}
-		BTnode temp = new BTnode(array1[0]);
-		binaryTree.Root = temp;
-		for (int i = 1; i < array1.length; i++) {
+                   //creating BST taking array elements one by one
+		for (int i = 0; i < array1.length; i++) {
 			binaryTree.createBT(binaryTree.Root, array1[i]);
 
 		}
-		binaryTree.Inorder(binaryTree.Root);
+		binaryTree.Inorder(binaryTree.Root);                    //in order traversing
 
-		for (int i = 0; i < binaryTree.traverseList.size(); i++) {
-			System.out.print(binaryTree.traverseList.get(i) + "\t");
-		}
-
+	        //taking 2nd tree elements from user similarly
 		System.out.println("how many elements in tree 2 ");
 		int size2 = input.nextInt();
 		int[] array2 = new int[size2];
@@ -166,15 +163,14 @@ public class BinaryTree {
 			array2[i] = input.nextInt();
 		}
 
-		BTnode temp2 = new BTnode(array2[0]);
-		binaryTree1.Root = temp2;
-		for (int i = 1; i < array2.length; i++) {
+		for (int i = 0; i < array2.length; i++) {
 
 			binaryTree1.createBT(binaryTree1.Root, array2[i]);
 		}
 
-	binaryTree1.InorderReverse(binaryTree1.Root);
+	binaryTree1.InorderReverse(binaryTree1.Root);                      //reverse in-order traversing 
 
+               //checking mirror similar or not 
 		if (binaryTree.checkMirrorTrees(binaryTree1)) {
 			System.out.println("trees are mirror similar");
 		} else {
@@ -182,9 +178,9 @@ public class BinaryTree {
 
 		}
 		System.out.println("postorder traversal :");
-		binaryTree.postOrder(binaryTree.Root);
+		binaryTree.postOrder(binaryTree.Root);                         //post-order traversing
 		System.out.println("preorder traversal :");
-		binaryTree.preOrder(binaryTree.Root);
+		binaryTree.preOrder(binaryTree.Root);                          //preorder traversing 
 	}
 
 
