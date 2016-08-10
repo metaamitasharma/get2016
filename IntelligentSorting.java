@@ -142,7 +142,8 @@ public class IntelligentSorting {
 		
 		int rdx = 1;      
 		for (int itr = 0; itr < maxDigits; itr++,rdx *= 10) {
-			bucket = new HashMap<Integer, LinkedList<Integer>>();
+		//	bucket = new HashMap<Integer, LinkedList<Integer>>();
+		bucket.clear();
 			for (int i = 0; i < 10; i++) {
 				
 				LinkedList<Integer> list = new LinkedList<Integer>();
