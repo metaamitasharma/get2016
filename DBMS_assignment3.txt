@@ -1,4 +1,4 @@
-SET FOREIGN_KEY_CHECKS=0;
+
 DELETE FROM BookIssue;
 INSERT into BookIssue values('2016-01-15','B123','E123','2016-04-03');
 INSERT into BookIssue values('2016-02-05','B124','E124','2016-03-10');
