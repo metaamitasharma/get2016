@@ -13,18 +13,11 @@ WHERE (category=(SELECT category
 FROM members_details
 WHERE member_name='manish'));
 
-2)SELECT m.member_name,BI.issue_dt,BI.due_date,t.title_name,return_dt
-FROM BookIssue BI
-INNER JOIN members_details m
-ON m.member_id=BI.member_id
-INNER JOIN Book b
-ON b.accession_num=BI.accession_num
-INNER JOIN BookReturn BR
-ON BR.accession_num=BI.accession_num
-INNER JOIN titles t
-ON b.title_id=t.title_id
-WHERE DATEDIFF(BR.return_dt,BI.due_date)>0;
-
+2)SELECT t.title_name, m.member_name ,bi.issue_dt,bi.due_date FROM bookIssue bi
+INNER JOIN members_details m ON bi.member_id = m.member_id
+INNER JOIN Book b ON bi.accession_num = b.accession_num
+INNER JOIN titles t ON b.title_id = t.title_id
+WHERE (bi.issue_dt, bi.accession_num, bi.member_id) NOT IN(SELECT br.issue_dt, br.accession_num, br.member_id FROM bookReturn br);
 
 3)SELECT m.member_name,BI.issue_dt,BI.due_date,b.title_id
 FROM BookIssue BI
