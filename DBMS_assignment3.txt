@@ -67,7 +67,7 @@ FROM members_details
 WHERE (SELECT MAX(LENGTH(member_name))FROM members_details)= LENGTH(member_name) ;
 
 
-3) SELECT COUNT(issue_dt) AS totalBookIssued FROM bookReturn;
+3) SELECT COUNT(issue_dt) AS totalBookIssued FROM bookIssue;
 
 
 problem 2
