@@ -29,6 +29,16 @@ INNER JOIN BookReturn BR
 ON BR.accession_num=BI.accession_num
 WHERE EXISTS (SELECT accession_num FROM BookIssue WHERE BI.accession_num=BR.accession_num);
 
+3) SELECT bi.issue_dt, t.title_name ,
+m.member_name, bi.due_date FROM bookIssue bi
+INNER JOIN members_details m ON bi.member_id = m.member_id
+INNER JOIN Book b ON bi.accession_num = b.accession_num
+INNER JOIN titles t ON b.title_id = t.title_id
+WHERE (bi.issue_dt, bi.accession_num, bi.member_id) IN
+(SELECT br.issue_dt, br.accession_num, br.member_id FROM bookReturn br
+WHERE TIMESTAMPDIFF(DAY, bi.due_date, br.return_dt) > 0);
+
+
 4)SELECT accession_num,purchase_date,price,status
 FROM Book
 WHERE price=(SELECT MAX(price) FROM Book);
