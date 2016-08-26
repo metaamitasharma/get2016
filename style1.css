@@ -1,0 +1,22 @@
+h1{
+	background : CadetBlue no-repeat scroll ;
+	Color : Cornsilk  ;
+	padding-left : 20px;
+}
+#info{
+	margin-left : 30%;
+	Color : CadetBlue;
+}
+#profile{
+	float : left;
+	height : 800px;
+}
+h2{
+	Color : DarkSlateGrey;
+}
+body{
+	padding : 10px;
+	border-style:solid;
+	border-color : LightBlue ;
+	border-width: 20px 10px 10px 10px;
+}
