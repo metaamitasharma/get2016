@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Storage</title>
+</head>
+<body>
+
+<div id="result" ></div>
+<div id="result1"></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("myName", "Amita Sharma");
+	localStorage.setItem("myMail", "amita.sharma@metacube.com");
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("myName");
+	document.getElementById("result1").innerHTML = localStorage.getItem("myMail");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+ 
+
+
+</script>
+
+</body>
+</html>
