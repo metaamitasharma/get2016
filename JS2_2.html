@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment2</title>
+</head>
+<body>
+<script type="text/javascript">
+function fnGetRows(){
+var n=Number(prompt("please enter number of rows","enter here"));
+return n;
+}
+function fnPyramidFor(n)
+{
+for(var row=0;row<n;row++)
+{
+for(var sp=0;sp<n-row-1;sp++){
+document.write("&nbsp;");
+document.write("&nbsp;");
+}
+for(var star=0;star<2*row+1;star++){
+document.write("*");
+}
+document.write("<br />");
+}
+}
+
+function fnPyramidWhile(n){
+var row=0;
+while(row<n){
+var sp=0;
+while(sp<n-row-1){
+document.write("&nbsp;");
+document.write("&nbsp;");
+sp++;
+}
+var star=0;
+while(star<2*row+1){
+document.write("*");
+star++;
+}
+document.write("<br />");
+row++;
+}
+}
+
+function fnPyramidDoWhile(n){
+var row=0;
+do{
+var sp=0;
+do{
+document.write("&nbsp;");
+document.write("&nbsp;");
+sp++;
+}while(sp<=n-row-1);
+var star=0;
+do{
+document.write("*");
+star++;
+}while(star<2*row+1);
+document.write("<br />");
+row++;
+}while(row<n);
+}
+
+</script>
+<p id="output"></p>
+<div id="buttons">
+<input type="button" onclick=fnPyramidFor(fnGetRows()) value="draw pyramid using For" />
+<input type="button" onclick=document.getElementById("output").innerHTML=fnPyramidWhile(fnGetRows()) value="draw pyramid using while" />
+<input type="button" onclick=fnPyramidDoWhile(fnGetRows()) value="draw pyramid using Do while" />	
+</div>
+
+</body>
+</html>
