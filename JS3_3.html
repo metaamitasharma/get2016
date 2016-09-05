@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment3</title>
+<link href="JS3_3.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<script>
+function fnShowAlert(){
+var choice =document.getElementsByName("radioSelect");
+if(choice[0].checked==true){
+var colorChoices = document.getElementById("colorDropdwn");
+var userChoice = colorChoices.options[colorChoices.selectedIndex].value;
+alert("you have selected " + userChoice);
+}
+else if(choice[1].checked==true){
+var shapeChoices = document.getElementById("shapeDropdwn");
+var userChoice1 = shapeChoices.options[shapeChoices.selectedIndex].value;
+alert("you have selected " + userChoice1);
+}
+else{
+alert("please select feilds");
+}
+}
+
+</script>
+<div class="dropdwn">
+<select id="colorDropdwn">
+<option>select color</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Green</option>
+</select>
+<select id="shapeDropdwn">
+<option>select shape</option>
+<option>Circle</option>
+<option>Square</option>
+<option>Triangle</option>
+</select>
+</div>
+<div class="radioBtn">
+<input type="radio" name="radioSelect" value="color" /><p>Color</p>
+<input type="radio" name="radioSelect" value="shape" /><p>Shape</p><br /></div>
+<p>Click on the button to get result</p>
+
+<button onclick=fnShowAlert() class="dropbtn">Dropdown</button>
+</body>
+</html>
