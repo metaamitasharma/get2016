@@ -1,0 +1,17 @@
+#dv{
+	background-color:Linen;
+}
+#dv p{
+	display:inline-block;
+	width:10%;
+	color:blue;
+	font-size:20px;
+}
+input[type="text"]{
+	display:inline-block;
+}
+#dvEmpty{
+	width:20%;
+	height:100px;
+	border:1px solid black;
+}

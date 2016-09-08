@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment4</title>
+<link href="Jquery2_4.css" type="text/css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+<script>
+$("document").ready(init);
+function init(){
+$( "#age" ).keyup(function() {
+   var value = $("#age").val();
+  
+   $( "#dvEmpty" ).text( value );
+   $("#age").css('background-color','PaleGoldenRod');
+});
+
+$( "#nm" ).keyup(function() {
+   var value = $("#nm").val();
+  
+   $( "#dvEmpty" ).text( value );
+   $("#nm").css('background-color','PaleGoldenRod');
+});
+
+$( "#addr" ).keyup(function() {
+   var value = $("#addr").val();
+  
+   $( "#dvEmpty" ).text( value );
+   $("#addr").css('background-color','PaleGoldenRod');
+});
+}
+</script>
+<div id="dv">
+<p>Name:</p><input type="text" id="nm" name="Name"></input><br>
+<p>Age:</p><input type="text" id="age" name="Age"></input><br>
+<p>Address:</p><textarea id="addr" rows="1" cols="20" name="Address" placeholder="Address"></textarea><br>
+<div id="dvEmpty"></div>
+</div>
+
+</body>
+</html>
