@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment4</title>
+
+</head>
+<body>
+
+	<script>
+
+function fnGetInput(){
+var  numbers=new Array(4);
+for(var i=0;i<4;i++){
+ numbers[i]=Number(prompt("please enter the number","enter here"));
+}
+return numbers;
+}
+
+function fnPattern(num){
+document.write("<p>Desired pyramid is:</p>");
+var max=Math.max(...num);
+var row=0;
+var alpha =65;
+while(row<max){
+for(var pat=1;pat<=max;pat++){
+for(var i=0;i<4;i++)
+{
+if(pat<=max-num[i]){
+document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+}
+else{
+document.write("*");
+document.write("&nbsp;&nbsp;&nbsp;");
+}
+}
+document.write("<br />");
+row++;
+}
+}
+for(var alpha=65;alpha<69;alpha++){
+document.write(String.fromCharCode(alpha));
+document.write("&nbsp;&nbsp;");
+}
+}
+</script>
+	<p>After clicking on below button enter 4 numbers in prompt to get
+		desired pyramid</p>
+	<input type="button" onclick="fnPattern(fnGetInput())"
+		value="click here" />
+</body>
+</html>
