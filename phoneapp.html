@@ -1,0 +1,49 @@
+<html ng-app="phonecatApp">
+<head>
+<link href="phoneapp.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+	<div class="row">
+		<div class="col-md-4 ">
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<label for="query">Search:</label>
+				</div>
+				<input id="query" ng-model="query.name">
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<label for="sort">Sort by:</label>
+				</div>
+				<select id="sort" ng-model="orderProp">
+					<option value="name">Alphabetical</option>
+					<option value="age">Newest</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<ul class="phones">
+
+				<li
+					ng-repeat="phone in phones | filter:query.name | orderBy:orderProp">
+					<div class="index row">
+						<img ng-src="{{phone.img}}" />
+						<div>
+							<a href="{{phone.img}}">{{phone.name}}</a>
+							<p>{{phone.snippet}}</p>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+	<script src="C:/Users/admin/Downloads/angular.min.js"></script>
+	<script src="phoneapp.js"></script>
+</body>
+</html>
